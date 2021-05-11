@@ -26,6 +26,11 @@ const pInADiv = document.createElement("p")
 pInADiv.classList.add("pStyle")
 pInADiv.textContent = "Me too!"
 
+const btn = document.querySelector("#btn")
+btn.addEventListener("click", () => {
+  alert("Hello World! I learned addEventListener!")
+})
+
 container.appendChild(content)
 container.appendChild(redText)
 container.appendChild(blueH3)
