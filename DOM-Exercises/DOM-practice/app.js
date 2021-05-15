@@ -26,9 +26,17 @@ const pInADiv = document.createElement("p")
 pInADiv.classList.add("pStyle")
 pInADiv.textContent = "Me too!"
 
-const btn = document.querySelector("#btn")
-btn.addEventListener("click", () => {
-  alert("Hello World! I learned addEventListener!")
+// const btns = document.querySelectorAll("button")
+// btns.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     alert("button.id")
+//   })
+// })
+
+const memebtn = document.querySelector("#memebtn")
+
+memebtn.addEventListener("click", () => {
+  location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 })
 
 container.appendChild(content)
@@ -37,3 +45,7 @@ container.appendChild(blueH3)
 container.appendChild(blackDiv)
 blackDiv.appendChild(h1InADiv)
 blackDiv.appendChild(pInADiv)
+
+// Create button saying 'click me'
+// when I click the button, a link will pop up
+// that link is rick roll
