@@ -6,7 +6,7 @@
   --hover: #D3CDCD;
   --active: #B7B3B3;
   --grid: #575757;
-  --button-bGround: #D7D6D6;
+  --cell-bGround: #D7D6D6;
 }
 
 *, *::before, *::after {
@@ -21,10 +21,6 @@ body {
   text-align: center;
 }
 
-header {
-
-}
-
 .heroTitle {
   color: var(--header);
 }
@@ -33,13 +29,6 @@ header {
   padding: 1em;
 }
 
-.gridContainer {
-  display: grid;
-  border: 2px solid var(--grid);
-  max-width: 50%;
-  min-height: 50%;
-  margin: 2em auto;
-}
 
 button {
   padding: .5em;
@@ -47,9 +36,6 @@ button {
   border: 1px solid var(--grid);
 }
 
-.container.clearBtn.changeClr {
-  margin: .5em 1em;
-}
 
 button:hover {
   background-color: var(--hover);
@@ -58,4 +44,17 @@ button:hover {
 button:active{
   background-color: var(--active);
   scale: 1.1;
+}
+
+.gridContainer {
+  display: grid;
+  border: 2px solid var(--grid);
+  max-width: 500px;
+  min-height: 500px;
+  margin: 2em auto;
+}
+
+.grid-cell {
+  border: 1px solid var(--grid);
+  background-color: var(--cell-bGround);
 }
