@@ -8,11 +8,9 @@
 
 :root {
   --background: #FFF9F9;
-  --clear: ;
-  --delete: ;
-  --operatorBtns: ;
+  
   --screen: #D3CDCD;
-  --calc-body: ;
+  
 }
 
 body {
@@ -36,14 +34,12 @@ body {
 .output {
   height: 10px;
   border: 2px var(--screen) solid;
-  padding: 10px;
-  font-size: 1.7em;
+  padding: 20px 10px;
+  font-size: 7px;
   text-align: right;
   word-wrap: break-word;
   word-break: break-all;
-  grid-column-start: 1;
-  grid-column-end: 1;
-  margin-bottom: .3em;
+  margin-bottom: 1em;
   background-color: white;
 }
 
