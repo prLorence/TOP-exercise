@@ -10,27 +10,42 @@
     <title>CALC FOR DUMMIES</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
   </head>
   <body>
-    <button class="buttonRed buttonSpan" data-reset></button>
-    <button class="buttonBlue buttonSpan" data-delete></button>
+    
+    <div class="container">
+      <div class="output" data-output></div>
+        <div class="calcContainer">
 
-    button.button.
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-    
-    <button class="button" data-input></button>
-    <button class="button" data-input></button>
-
-    
-    <script src="" async defer></script>
+          
+          <button class="operatorBtns" data-operator>÷</button>
+          <button class="button" data-input>7</button>
+          <button class="button" data-input>8</button>
+          <button class="button" data-input>9</button>
+          
+          <button class="operatorBtns" data-operator>x</button>
+          <button class="button" data-input>4</button>
+          <button class="button" data-input>5</button>
+          <button class="button" data-input>6</button>
+          
+          <button class="operatorBtns" data-operator>-</button>
+          <button class="button" data-input>1</button>
+          <button class="button" data-input>2</button>
+          <button class="button" data-input>3</button>
+          
+          <button class="operatorBtns" data-operator>+</button>
+          <button class="button" data-decimal>.</button>
+          <button class="button" data-input>0</button>
+          <button class="button" data-equals>=</button>
+          
+          <button class="buttonRed buttonSpan" data-reset> AC</button>
+          <button class="buttonBlue buttonSpan" data-delete> C </button>
+          
+      </div>
+    </div>
+      
+      <script src="" async defer></script>
   </body>
 </html>
