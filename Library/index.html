@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Libraryooze </title>
+    <meta name="description" content="This project will help you organize your to-read or currently-reading books">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/normalize.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1> Libraryooze </h1>       
+    </header>
+    
+    <div class="addButtonContainer">
+      <button class="addButton" id="addButton"> Add book </button>
+      <button class ="darkMode" action="./app.js"> &#9728;&#65039; </button>
+    </div>
+
+    <div id="prompt">  
+      <form action="./app.js" id="form">
+          <section class="prompt">  
+            <text> Add book </text>
+            <span class="closeWindow"> x </span>
+          </section>
+          <div id="bookDesc">
+            <p><input type="text" id="title" name="title" placeholder="Book Title"></p>
+            <p><input type="text" id="author" name="author" placeholder="Author"></p>
+            <p><input type="text" id="pages" name="pages" placeholder="No. of pages"></p>
+          </div>
+          <div id="haveRead">
+            <p><label> Read </label><input type="checkbox" id="read" name="read" value="yes"></p>
+          </div>
+          <button type="submit" form="form" id="submitBtn"> Add </button>
+      </form>
+    </div>
+
+      <div class="shelf"></div>
+    <script src="app.js"></script>
+  </body>
+
+</html>
