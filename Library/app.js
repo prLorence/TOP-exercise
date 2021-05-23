@@ -1,25 +1,40 @@
-// Get the modal
-var modal = document.getElementById("prompt")
+// variables for event handlers
+const prompt = document.getElementById("prompt")
 
-// Get the button that opens the modal
-var btn = document.getElementById("addButton")
+const darkModeBtn = document.querySelector("#darkMode")
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("closeWindow")[0]
+const addBtn = document.querySelector("#addButton")
 
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block"
-}
+const closeWindow = document.getElementsByClassName("closeWindow")[0]
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none"
-}
+const addNewBook = document.querySelector("#submitBtn")
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none"
+// event click functions
+addBtn.addEventListener("click", () => {
+  prompt.style.display = "block"
+})
+
+closeWindow.addEventListener("click", () => {
+  prompt.style.display = "none"
+})
+
+window.addEventListener("click", (e) => {
+  if (e.target == modal) {
+    prompt.style.display = "none"
+  }
+})
+
+addNewBook.addEventListener("click", bookDetails)
+darkModeBtn.addEventListener("click", darkMode)
+
+class book {
+  constructor(title, author, pages, read) {
+    ;(this.title = form.title.value),
+      (this.author = form.author.value),
+      (this.pages = form.pages.value),
+      (this.read = form.read.checked)
   }
 }
+
+let myShelf = []
+let newBook
