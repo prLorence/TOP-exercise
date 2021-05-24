@@ -18,7 +18,6 @@
     
     <div class="addButtonContainer">
       <button class="addButton" id="addButton"> Add book </button>
-      <button class="darkMode" id="darkMode"> &#9728;&#65039; </button>
     </div>
 
     <div id="prompt">  
@@ -28,9 +27,9 @@
             <span class="closeWindow"> x </span>
           </section>
           <div id="bookDesc">
-            <p><input type="text" id="title" name="title" placeholder="Book Title"></p>
-            <p><input type="text" id="author" name="author" placeholder="Author"></p>
-            <p><input type="text" id="pages" name="pages" placeholder="No. of pages"></p>
+            <p><input type="text" id="title" name="title" placeholder="Book Title" required></p>
+            <p><input type="text" id="author" name="author" placeholder="Author" required></p>
+            <p><input type="number" id="pages" name="pages" placeholder="No. of pages" required></p>
           </div>
           <div id="haveRead">
             <p><label> Read </label><input type="checkbox" id="read" name="read" value="yes"></p>
@@ -39,7 +38,7 @@
       </form>
     </div>
 
-      <div class="shelf"></div>
+      <div class="shelf" id="shelf"></div>
     <script src="app.js"></script>
   </body>
 

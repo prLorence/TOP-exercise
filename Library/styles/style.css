@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
 
+/* Dark Mode reference https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/ */
+
 :root {
   --background: rgb(227,232,234);
   --button: rgb(222, 236, 241);
@@ -9,6 +11,7 @@
   --darkmode: rgb(73,80,84);
   --text-color: rgb(64, 70, 73);
 }
+
 
 *, *::before, *::after {
   box-sizing: border-box; 
@@ -83,13 +86,13 @@ button:focus {outline: 0;}
   border: 3px solid var(--text-color);
 }
 
-.removeBtn {
+#removeBtn {
   font-size: 1.3em;
   height: 35px;
   width: 110px;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: 3px solid var(--button-hover);
+  border: 3px solid var(--darkmode);
 }
 
 button#submitBtn {
@@ -102,7 +105,7 @@ button#submitBtn {
 
 /* form styles */
 
-.bookDesc {
+#bookDesc {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,11 +123,11 @@ section {
 section span {
   align-self: end;
   justify-self: end;
- 
+  scale: .9;
 }
 
 section text {
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -133,7 +136,7 @@ section text {
 
 input#title {
   height: 30px;
-  width: 200px;
+  width: 150px;
   font-size: 20px;
   border: solid 3px var(--darkmode);
   border-radius: 5px;
@@ -142,7 +145,7 @@ input#title {
 
 input#author {
   height: 30px;
-  width: 200px;
+  width: 150px;
   font-size: 20px;
   border: solid 3px var(--darkmode);
   border-radius: 5px;
@@ -151,7 +154,7 @@ input#author {
 
 input#pages {
   height: 30px;
-  width: 200px;
+  width: 150px;
   font-size: 20px;
   border: solid 3px var(--darkmode);
   border-radius: 5px;
@@ -171,7 +174,14 @@ input[type=checkbox] {
 
 /* Shelf books style */ 
 
-.shelf {
+#shelf {
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -252,3 +262,21 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
+/* apply this styles if min-width is 400px, so the normal styles will be mobile view */
+
+@media only screen and (min-width: 660px) {
+
+  #shelf {
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 0;
+  }
+
+  section text {
+    font-size: 1.5em;
+  }
+
+  input#author, input#title, input#pages {
+    width: 200px;
+  }
+}
