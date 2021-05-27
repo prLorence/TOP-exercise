@@ -33,10 +33,51 @@ function bookInfo(title, author, pages, status) {
   this.info = function () {
    return `${title} by ${author}, ${pages} pages, ${status}`
   }
- 
-
 
 }
+
+function myInfo(name, age, location, likes) {
+  this.name = name,
+  this.age = age,
+  this.location = location,
+  this.likes = likes
+
+  this.printAll = function () {
+    return `Hello! My Name is ${name}, I'm ${age} years old, and I like ${likes}!`
+  }
+} 
+
+function Plant() {
+  this.country = "Philippines",
+  this.isOrganic = true
+}
+
+Plant.prototype.showNameAndColor = function () {
+  console.log("I am a " + this.name + " and my color is " + this.color)
+}
+
+Plant.prototype.amIOrganic = function () {
+  if (this.isOrganic) {
+    console.log("I am Organic, Baby!")
+  }
+}
+
+function fruit (fruitName, fruitColor) {
+  this.name = fruitName,
+  this.color = fruitColor
+}
+
+fruit.prototype = Object.create(Plant.prototype)
+
+const aBanana = new fruit ("Banana", "Yellow")
+
+console.log(aBanana.showNameAndColor())
+
+const myDesc = new myInfo("Paul", 18, "Marilao"," Javascript")
+console.log(myDesc.printAll())
+console.log(myDesc.prototype)
+
+
 
 const theHobbit = new bookInfo("The Hobbit", "J.R.R Tolkien", "295", "not read yet")
 console.log(theHobbit.info())
