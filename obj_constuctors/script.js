@@ -10,46 +10,46 @@ let playerTwo = {
 
 function Player(name, marker, hobby, message) {
   this.name = name,
-  this.marker = marker,
-  this.hobby = hobby
+    this.marker = marker,
+    this.hobby = hobby
   this.sayWhat = function () {
     console.log(message)
   }
 }
 
 let player1 = new Player("paul", "Y", "video games")
-let player2 = new Player ("paul", "Y", "video games", "wassup dawg")
+let player2 = new Player("paul", "Y", "video games", "wassup dawg")
 console.log(player1.name)
 player2.sayWhat()
 
 
 function bookInfo(title, author, pages, status) {
-  
+
   this.title = title,
-  this.author = author,
-  this.pages = pages,
-  this.status = status 
-  
+    this.author = author,
+    this.pages = pages,
+    this.status = status
+
   this.info = function () {
-   return `${title} by ${author}, ${pages} pages, ${status}`
+    return `${title} by ${author}, ${pages} pages, ${status}`
   }
 
 }
 
 function myInfo(name, age, location, likes) {
   this.name = name,
-  this.age = age,
-  this.location = location,
-  this.likes = likes
+    this.age = age,
+    this.location = location,
+    this.likes = likes
 
   this.printAll = function () {
     return `Hello! My Name is ${name}, I'm ${age} years old, and I like ${likes}!`
   }
-} 
+}
 
 function Plant() {
   this.country = "Philippines",
-  this.isOrganic = true
+    this.isOrganic = true
 }
 
 Plant.prototype.showNameAndColor = function () {
@@ -62,18 +62,18 @@ Plant.prototype.amIOrganic = function () {
   }
 }
 
-function fruit (fruitName, fruitColor) {
+function fruit(fruitName, fruitColor) {
   this.name = fruitName,
-  this.color = fruitColor
+    this.color = fruitColor
 }
 
 fruit.prototype = Object.create(Plant.prototype)
 
-const aBanana = new fruit ("Banana", "Yellow")
+const aBanana = new fruit("Banana", "Yellow")
 
 console.log(aBanana.showNameAndColor())
 
-const myDesc = new myInfo("Paul", 18, "Marilao"," Javascript")
+const myDesc = new myInfo("Paul", 18, "Marilao", " Javascript")
 console.log(myDesc.printAll())
 console.log(myDesc.prototype)
 
@@ -92,4 +92,3 @@ console.log(theHobbit.info())
 // O(n^2) n * n = compares all the numbers
 // O(1) 1 = compares the first and last numbers
 // O(2n) 2n = find the largest and smallest number
-
