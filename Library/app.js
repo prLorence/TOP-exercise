@@ -40,7 +40,7 @@ class Book {
 let myShelf = []
 let newBook
 
-// function loop and display it to the card\
+// function loop and display it to the card
 
 function addBookToLibrary() {
   event.preventDefault()
