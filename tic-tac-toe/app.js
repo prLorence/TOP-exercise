@@ -9,11 +9,12 @@ const gameModule = (function () {
   const gameStatsIndicator = document.getElementById("game-result")
 
   let runGame = false
+  let endGame = false
   let currPlayer = "X"
   let gameData = ["", "", "", "", "", "", "", "", ""]
 
   const announceMsg = () => `${currPlayer} wins!`
-  const tieResult = "It's a draw!"
+  const tieResultMsg = "It's a tie!"
   const turnIndicator = () => `It's ${currPlayer} turn`
   const instruction = "Press play to start!"
   gameStatsIndicator.innerText = instruction
@@ -55,8 +56,6 @@ const gameModule = (function () {
   // function that checks when the game is done and passes turns
 
   function evalResult() {
-    let endGame = false
-
     for (let i = 0; i <= 7; i++) {
       let a = gameData[winPattern[i][0]]
       let b = gameData[winPattern[i][1]]
@@ -73,15 +72,15 @@ const gameModule = (function () {
     if (endGame) {
       gameStatsIndicator.innerText = announceMsg()
       changeResultColor("000000")
-      runGame = true
+      runGame = false
       return
     }
 
-    let tieResult = !gameData.includes("")
+    let tieResult = !gameData.includes("",)
     if (tieResult) {
-      gameStatsIndicator.innerText = "It's a tie!"
+      gameStatsIndicator.innerText = tieResultMsg
       changeResultColor("000000")
-      runGame = true
+      runGame = false
       return
     }
     changeTurn()
@@ -107,6 +106,7 @@ const gameModule = (function () {
       .querySelectorAll(".grid-cell")
       .forEach((cell) => (cell.innerText = ""))
     runGame = false
+    endGame = false
     currPlayer = "X"
     gameStatsIndicator.innerText = instruction
   }
@@ -114,7 +114,10 @@ const gameModule = (function () {
   function play() {
     runGame = true
     gameStatsIndicator.innerText = turnIndicator()
-    
+    if (endGame === true) {
+      runGame = false
+      gameStatsIndicator.innerText = announceMsg()
+    }
   }
   return { clickEvent, restart, play }
 })()
