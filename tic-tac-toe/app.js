@@ -82,7 +82,6 @@ const gameModule = (function () {
     changeTurn()
   }
 
-  
   // changes game status text color according to players turn
   function changeResultColor(color) {
     gameStatsIndicator.style.color = "#" + color
@@ -97,40 +96,40 @@ const gameModule = (function () {
       changeResultColor("000000")
     }
   }
-  
+
   function restart() {
     gameData = ["", "", "", "", "", "", "", "", ""]
     document
-    .querySelectorAll(".grid-cell")
-    .forEach((cell) => (cell.innerText = ""))
+      .querySelectorAll(".grid-cell")
+      .forEach((cell) => (cell.innerText = ""))
     runGame = false
     endGame = false
     currPlayer = "X"
     gameStatsIndicator.innerText = instruction
   }
-  
+
+  function play() {
+    runGame = true
+    gameStatsIndicator.innerText = turnIndicator()
+    if (endGame === true) {
+      runGame = false
+      gameStatsIndicator.innerText = announceMsg()
+    }
+  }
   return { clickEvent, restart, play }
 })()
 
-  function play() {
-  runGame = true
-  gameStatsIndicator.innerText = turnIndicator()
-  if (endGame === true) {
-    runGame = false
-    gameStatsIndicator.innerText = announceMsg()
-  }
-}
 // Global event listeners for module function
 document
-.querySelectorAll(".grid-cell")
-.forEach((cell) => cell.addEventListener("click", gameModule.clickEvent))
+  .querySelectorAll(".grid-cell")
+  .forEach((cell) => cell.addEventListener("click", gameModule.clickEvent))
 
 document
-.querySelector("#restart-button")
-.addEventListener("click", gameModule.restart)
+  .querySelector("#restart-button")
+  .addEventListener("click", gameModule.restart)
 
 document
-.querySelector("#play-button")
-.addEventListener("click", gameModule.play)
+  .querySelector("#play-button")
+  .addEventListener("click", gameModule.play)
 
 // document.querySelector("#play-button").addEventListener("click")
