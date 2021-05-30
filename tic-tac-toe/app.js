@@ -119,6 +119,7 @@ const gameModule = (function () {
   return { clickEvent, restart, play }
 })()
 
+
 // Global event listeners for module function
 document
   .querySelectorAll(".grid-cell")
