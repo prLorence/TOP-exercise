@@ -80,6 +80,7 @@ const gameModule = (function () {
       return
     }
     changeTurn()
+    
   }
 
   // changes game status text color according to players turn
@@ -109,16 +110,21 @@ const gameModule = (function () {
   }
 
   function play() {
+    let tieResult = !gameData.includes("")
     runGame = true
     gameStatsIndicator.innerText = turnIndicator()
     if (endGame === true) {
       runGame = false
       gameStatsIndicator.innerText = announceMsg()
     }
+    if (tieResult) {
+      gameStatsIndicator.innerText = tieResultMsg
+      changeResultColor("000000")
+      runGame = false
+    }
   }
   return { clickEvent, restart, play }
 })()
-
 
 // Global event listeners for module function
 document
