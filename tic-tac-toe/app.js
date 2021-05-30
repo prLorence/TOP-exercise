@@ -108,11 +108,7 @@ const gameModule = (function () {
     currPlayer = "X"
     gameStatsIndicator.innerText = instruction
   }
-  
-  return { clickEvent, restart, play }
-})()
-
-  function play() {
+    function play() {
   runGame = true
   gameStatsIndicator.innerText = turnIndicator()
   if (endGame === true) {
@@ -120,6 +116,10 @@ const gameModule = (function () {
     gameStatsIndicator.innerText = announceMsg()
   }
 }
+  return { clickEvent, restart, play }
+})()
+
+
 // Global event listeners for module function
 document
 .querySelectorAll(".grid-cell")
