@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Noto+Sans+JP&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Quicksand:wght@400&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  font-family:'PT Serif', serif;
+}
+
+body {
+  background-color: black;
+}
+/* NAVBAR STYLE */
+a {
+  text-decoration: none;
+  color: white;
+}
+h1 {
+  margin-top: 0;
+}
+
+header {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid white;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+/* CONTENT STYLES */ 
+
+.content {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+}
+
+main {
+  font-size: 1.2em;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+  margin: 2em 0 1em 1em;
+  line-height: 1.5;
+}
+
+
+
+.landing-photo {
+  display: float;
+  height: 400px;
+  width: 305px;
+  border-radius: 3px;
+}
