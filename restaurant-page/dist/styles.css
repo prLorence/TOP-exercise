@@ -18,7 +18,9 @@ body {
   background-color: black;
 }
 /* NAVBAR STYLE */
-a {
+.nav-button {
+  background-color: black;
+  border: none;
   text-decoration: none;
   color: white;
 }
@@ -34,6 +36,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 1em;
+  width: 100%;
   border-bottom: 1px solid white;
 }
 
@@ -48,29 +51,27 @@ nav {
 
 .content {
   font-family: 'Noto Sans JP', sans-serif;
+  padding: 0;
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 70vh;
+  flex-direction: column;
+  height: 100vh;
   width: 100%;
 }
 
 main {
-  font-size: 1.2em;
-  display: flex;
-  align-self: flex-start;
-  flex-direction: column;
-  margin: 2em 0 1em 1em;
+  font-size: 1.6em;
+  text-align: center;
+  margin: 2em 0 1em 0;
   line-height: 1.5;
 }
 
 
 
 .landing-photo {
-  display: float;
-  height: 400px;
-  width: 305px;
-  border-radius: 3px;
+  height: 500px;
+  width: 355px;
+  border-radius: 5px;
+  margin-top: 1em;
 }
