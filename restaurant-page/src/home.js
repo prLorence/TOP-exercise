@@ -4,6 +4,7 @@ function homePage() {
 
   const landingPhoto = document.createElement("img")
   landingPhoto.src = "./images/burger.jpg"
+  landingPhoto.setAttribute("alt", "a delicious burger")
   landingPhoto.classList.add("landing-photo")
 
   homeContainer.appendChild(tagLine("Food at"))
