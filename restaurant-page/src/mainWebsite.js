@@ -2,6 +2,7 @@
 // then the textContent
 //
 import home from "./home"
+import menu from "./menu"
 
 function createHeader() {
   const header = document.createElement("header")
