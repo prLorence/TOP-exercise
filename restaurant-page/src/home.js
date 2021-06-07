@@ -1,14 +1,14 @@
 function homePage() {
   const homeContainer = document.createElement("div")
-  homeContainer.classList.add("content")
+  homeContainer.classList.add("home-container")
 
   const landingPhoto = document.createElement("img")
   landingPhoto.src = "./images/burger.jpg"
   landingPhoto.setAttribute("alt", "a delicious burger")
   landingPhoto.classList.add("landing-photo")
 
-  homeContainer.appendChild(tagLine("Food at"))
-  homeContainer.appendChild(tagLine("Your Fingertips"))
+  homeContainer.appendChild(tagLine("Food at Your Fingertips"))
+  // homeContainer.appendChild(tagLine("Your Fingertips"))
   homeContainer.appendChild(landingPhoto)
 
   return homeContainer
