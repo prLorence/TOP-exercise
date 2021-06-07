@@ -3,6 +3,7 @@
 //
 import home from "./home"
 import menu from "./menu"
+import contact from "./contact"
 
 function createHeader() {
   const header = document.createElement("header")
