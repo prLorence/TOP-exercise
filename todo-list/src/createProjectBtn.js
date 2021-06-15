@@ -1,3 +1,5 @@
+import addProjectDetails from "./formDetails";
+
 function createProject() {
 	const dashboard = document.querySelector(".dashboard");
 
@@ -17,6 +19,7 @@ function createProject() {
 
 	const formContent = document.createElement("form");
 	formContent.setAttribute("action", "./formDetails.js");
+	formContent.setAttribute("id", "form");
 	formContent.classList.add("modal-content");
 
 	const closeBtn = document.createElement("span");
@@ -26,35 +29,47 @@ function createProject() {
 	const taskTitle = document.createElement("p");
 	taskTitle.textContent = "Add Project";
 
+	// Creates task title input field
 	const taskTitlePara = document.createElement("p");
 	const taskTitleField = document.createElement("input");
 	taskTitleField.classList.add("task-title");
 	taskTitleField.setAttribute("type", "text");
-	taskTitleField.setAttribute("id", "task-title");
+	taskTitleField.setAttribute("name", "title");
+	taskTitleField.setAttribute("placeholder", "Task Title");
+	taskTitleField.setAttribute("id", "task");
 
+	// Creates task description input field
 	const taskDescPara = document.createElement("p");
 	const taskDescField = document.createElement("input");
 	taskDescField.classList.add("task-description");
 	taskDescField.setAttribute("type", "text");
-	taskDescField.setAttribute("id", "task-description");
+	taskDescField.setAttribute("name", "description");
+	taskDescField.setAttribute("placeholder", "Task Description");
+	taskDescField.setAttribute("id", "task");
 
 	const addTaskBtn = document.createElement("button");
 	addTaskBtn.classList.add("add-task");
 	addTaskBtn.setAttribute("id", "add-task");
 	addTaskBtn.textContent = "Add Task";
 
-	// When the user clicks on the button, open the modal
+	// Click event listeners
+
+	addTaskBtn.addEventListener("click", addProjectDetails);
+
 	addProjectBtn.addEventListener("click", () => {
 		formModal.style.display = "block";
 	});
 
-	// When the user clicks on <span> (x), close the modal
+	addTaskBtn.addEventListener("click", () => {
+		formModal.style.display = "none";
+		dashboard.removeChild(formModal);
+	});
+
 	closeBtn.addEventListener("click", () => {
 		formModal.style.display = "none";
 		dashboard.removeChild(formModal);
 	});
 
-	// When the user clicks anywhere outside of the modal, close it
 	window.addEventListener("click", () => {
 		if (event.target == formModal) {
 			formModal.style.display = "none";
