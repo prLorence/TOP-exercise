@@ -1,8 +1,9 @@
-import {taskList} from "./formDetails";
+import { taskList } from "./formDetails";
+import createTask from "./createTask";
 
 function render() {
-	const taskContainer = document.querySelector(".task-container");
-	const tasks = document.querySelectorAll("#task");
+	const taskContainer = document.getElementById("task-container");
+	const tasks = document.querySelectorAll(".task-div");
 
 	tasks.forEach((task) => taskContainer.removeChild(task));
 
