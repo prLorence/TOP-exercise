@@ -1,4 +1,4 @@
-import createProjectBtn from "./createProjectBtn";
+import createProject from "./createProject";
 
 function createDashBoard() {
 	const container = document.querySelector(".container");
@@ -14,7 +14,7 @@ function createDashBoard() {
 	container.appendChild(dashBoard);
 	dashBoard.appendChild(addProjectBtn);
 
-	addProjectBtn.addEventListener("click", createProjectBtn);
+	addProjectBtn.addEventListener("click", createProject);
 
 	return container;
 }
