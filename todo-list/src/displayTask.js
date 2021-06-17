@@ -1,5 +1,5 @@
 import { taskList } from "./formDetails";
-import createTask from "./createTask";
+import addTask from "./addTask";
 
 function render() {
 	const taskContainer = document.getElementById("task-container");
@@ -8,7 +8,7 @@ function render() {
 	tasks.forEach((task) => taskContainer.removeChild(task));
 
 	for (let i = 0; i < taskList.length; i++) {
-		createTask(taskList[i]);
+		addTask(taskList[i]);
 	}
 }
 

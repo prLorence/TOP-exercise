@@ -5,16 +5,17 @@ export let taskList = [];
 function addProjectDetails() {
 	let newTask;
 	class Task {
-		constructor(title, description) {
+		constructor(title, description, date = "No date") {
 			(this.title = form.title.value),
-				(this.description = form.description.value);
+				(this.description = form.description.value),
+				(this.date = form.date.value);
 		}
 	}
 
-	function addTask(title, description) {
+	function addTask(title, description, date) {
 		event.preventDefault();
 
-		newTask = new Task(title, description);
+		newTask = new Task(title, description, date);
 		taskList.push(newTask);
 		render();
 		form.reset();

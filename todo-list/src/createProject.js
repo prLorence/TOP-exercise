@@ -29,7 +29,7 @@ function createProject() {
 	const taskTitle = document.createElement("p");
 	taskTitle.textContent = "Add Project";
 
-	// Creates task title input field
+	// task title input field
 	const taskTitlePara = document.createElement("p");
 	const taskTitleField = document.createElement("input");
 	taskTitleField.classList.add("task-title");
@@ -38,7 +38,7 @@ function createProject() {
 	taskTitleField.setAttribute("placeholder", "Task Title");
 	taskTitleField.setAttribute("id", "task");
 
-	// Creates task description input field
+	// task description input field
 	const taskDescPara = document.createElement("p");
 	const taskDescField = document.createElement("input");
 	taskDescField.classList.add("task-description");
@@ -46,6 +46,13 @@ function createProject() {
 	taskDescField.setAttribute("name", "description");
 	taskDescField.setAttribute("placeholder", "Task Description");
 	taskDescField.setAttribute("id", "task");
+
+	// task date input field
+	const taskDateField = document.createElement("input");
+	taskDateField.classList.add("task-date");
+	taskDateField.setAttribute("type", "date");
+	taskDateField.setAttribute("name", "date");
+	taskDateField.setAttribute("id", "task");
 
 	const addTaskBtn = document.createElement("button");
 	addTaskBtn.classList.add("add-task");
@@ -81,6 +88,7 @@ function createProject() {
 	taskDescPara.appendChild(taskDescField);
 	fieldDiv.appendChild(taskTitlePara);
 	fieldDiv.appendChild(taskDescPara);
+	fieldDiv.appendChild(taskDateField);
 	taskHeaderSection.appendChild(closeBtn);
 	taskHeaderSection.appendChild(taskTitle);
 	formContent.appendChild(taskHeaderSection);

@@ -1,6 +1,7 @@
 import { taskList } from "./formDetails.js";
+import { format } from "date-fns";
 
-function createTask(task) {
+function addTask(task) {
 	const taskContainer = document.getElementById("task-container");
 
 	const taskDiv = document.createElement("div");
@@ -19,12 +20,17 @@ function createTask(task) {
 	const taskDesc = document.createElement("p");
 	taskDesc.textContent = task.description;
 
+	const taskDate = document.createElement("p");
+	taskDate.classList.add("task-date");
+	taskDate.textContent = task.date;
+
 	taskDiv.appendChild(taskCheckBox);
 	taskDiv.appendChild(taskTitle);
 	taskDiv.appendChild(taskDesc);
+	taskDiv.appendChild(taskDate);
 	taskContainer.appendChild(taskDiv);
 
 	return taskContainer;
 }
 
-export default createTask;
+export default addTask;
