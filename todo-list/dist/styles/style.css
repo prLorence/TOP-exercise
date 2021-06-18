@@ -50,6 +50,7 @@ header {
 
 .header {
   grid-area: header;
+  background-color: var(--dashboard-color);
 }
 
 .dashboard {
