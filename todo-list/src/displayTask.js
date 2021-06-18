@@ -1,14 +1,14 @@
-import { taskList } from "./formDetails";
-import addTask from "./addTask";
+import { projectList } from "./projectDetails";
+import addProject from "./addProject";
 
 function render() {
-	const taskContainer = document.getElementById("task-container");
-	const tasks = document.querySelectorAll(".task-div");
+	const dashBoard = document.querySelector(".dashboard");
+	const projects = document.querySelectorAll(".project-card");
 
-	tasks.forEach((task) => taskContainer.removeChild(task));
+	projects.forEach((project) => dashBoard.removeChild(project));
 
-	for (let i = 0; i < taskList.length; i++) {
-		addTask(taskList[i]);
+	for (let i = 0; i < projectList.length; i++) {
+		addProject(projectList[i]);
 	}
 }
 
