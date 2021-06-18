@@ -1,4 +1,4 @@
-import addProjectDetails from "./formDetails";
+import addProjectCard from "./projectDetails";
 
 function createProject() {
 	const dashboard = document.querySelector(".dashboard");
@@ -26,16 +26,13 @@ function createProject() {
 	closeBtn.classList.add("close-button");
 	closeBtn.textContent = "X";
 
-	const taskTitle = document.createElement("p");
-	taskTitle.textContent = "Add Project";
-
 	// task title input field
 	const taskTitlePara = document.createElement("p");
 	const taskTitleField = document.createElement("input");
 	taskTitleField.classList.add("task-title");
 	taskTitleField.setAttribute("type", "text");
 	taskTitleField.setAttribute("name", "title");
-	taskTitleField.setAttribute("placeholder", "Task Title");
+	taskTitleField.setAttribute("placeholder", "Project Title");
 	taskTitleField.setAttribute("id", "task");
 
 	// task description input field
@@ -44,24 +41,24 @@ function createProject() {
 	taskDescField.classList.add("task-description");
 	taskDescField.setAttribute("type", "text");
 	taskDescField.setAttribute("name", "description");
-	taskDescField.setAttribute("placeholder", "Task Description");
+	taskDescField.setAttribute("placeholder", "Project Description");
 	taskDescField.setAttribute("id", "task");
 
 	// task date input field
-	const taskDateField = document.createElement("input");
-	taskDateField.classList.add("task-date");
-	taskDateField.setAttribute("type", "date");
-	taskDateField.setAttribute("name", "date");
-	taskDateField.setAttribute("id", "task");
+	// const taskDateField = document.createElement("input");
+	// taskDateField.classList.add("task-date");
+	// taskDateField.setAttribute("type", "date");
+	// taskDateField.setAttribute("name", "date");
+	// taskDateField.setAttribute("id", "task");
 
 	const addTaskBtn = document.createElement("button");
 	addTaskBtn.classList.add("add-task");
 	addTaskBtn.setAttribute("id", "add-task");
-	addTaskBtn.textContent = "Add Task";
+	addTaskBtn.textContent = "Add Project";
 
 	// Click event listeners
 
-	addTaskBtn.addEventListener("click", addProjectDetails);
+	addTaskBtn.addEventListener("click", addProjectCard);
 
 	addProjectBtn.addEventListener("click", () => {
 		formModal.style.display = "block";
@@ -88,9 +85,8 @@ function createProject() {
 	taskDescPara.appendChild(taskDescField);
 	fieldDiv.appendChild(taskTitlePara);
 	fieldDiv.appendChild(taskDescPara);
-	fieldDiv.appendChild(taskDateField);
+	// fieldDiv.appendChild(taskDateField);
 	taskHeaderSection.appendChild(closeBtn);
-	taskHeaderSection.appendChild(taskTitle);
 	formContent.appendChild(taskHeaderSection);
 	formContent.appendChild(fieldDiv);
 	formContent.appendChild(addTaskBtn);
