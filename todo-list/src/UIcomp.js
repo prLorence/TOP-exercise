@@ -12,11 +12,31 @@ function createDashBoard() {
 	addProjectBtn.textContent = "Add Project";
 
 	container.appendChild(dashBoard);
+	container.appendChild(createHeader("clipboard", "Bit List"));
 	dashBoard.appendChild(addProjectBtn);
 
 	addProjectBtn.addEventListener("click", createProject);
 
 	return container;
+}
+
+function createHeader(image, text) {
+	const toDoListHeader = document.createElement("header");
+	toDoListHeader.classList.add("header");
+	toDoListHeader.setAttribute("id", "header");
+
+	const toDoTitle = document.createElement("h2");
+	toDoTitle.classList.add("title");
+	toDoTitle.textContent = text;
+
+	const iconImg = document.createElement("img");
+	iconImg.src = `./images/${image.toLowerCase()}.svg`;
+	iconImg.classList.add("icon");
+
+	toDoListHeader.appendChild(iconImg);
+	toDoListHeader.appendChild(toDoTitle);
+
+	return toDoListHeader;
 }
 
 export default createDashBoard;
