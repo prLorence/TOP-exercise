@@ -1,5 +1,5 @@
 import createProject from "./createProject";
-import createTasks from "./addTask";
+import createTasks from "./createTask";
 
 function createDashBoard() {
 	const container = document.querySelector(".container");
