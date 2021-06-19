@@ -1,10 +1,12 @@
 import createProject from "./createProject";
+import createTasks from "./addTask";
 
 function createDashBoard() {
 	const container = document.querySelector(".container");
 
 	const dashBoard = document.createElement("div");
 	dashBoard.classList.add("dashboard");
+	dashBoard.setAttribute("id", "dashboard");
 
 	const addProjectBtn = document.createElement("button");
 	addProjectBtn.classList.add("project-button", "modal-btn");
