@@ -1,33 +1,27 @@
-import { projectList } from "./projectDetails.js";
-import { format } from "date-fns";
+import createTasks from "./addTask";
+import { projectList } from "./projectDetails";
 
 function addProject(project) {
 	const dashBoard = document.querySelector(".dashboard");
 
 	const projectDiv = document.createElement("div");
 	projectDiv.classList.add("project-card");
-	projectDiv.setAttribute("id", projectList.indexOf(project));
-
-	// const taskCheckBox = document.createElement("input");
-	// taskCheckBox.classList.add("task-checkbox");
-	// taskCheckBox.setAttribute("type", "checkbox");
-	// taskCheckBox.setAttribute("name", `task${taskList.indexOf(task)}`);
+	projectDiv.setAttribute("id", `project${projectList.indexOf(project)}`);
 
 	const projectTitle = document.createElement("h3");
-	projectTitle.classList.add("task-title");
+	projectTitle.classList.add("project-title");
 	projectTitle.textContent = project.title;
 
 	const projectDesc = document.createElement("p");
 	projectDesc.textContent = project.description;
 
-	// const taskDate = document.createElement("p");
-	// taskDate.classList.add("task-date");
-	// taskDate.textContent = task.date;
+	const projectCards = document.querySelectorAll("#dashboard > div");
 
-	// taskDiv.appendChild(taskCheckBox);
+	projectCards.forEach((project) => {
+		project.addEventListener("click", createTasks);
+	});
+
 	projectDiv.appendChild(projectTitle);
-	// projectDiv.appendChild(projectDesc);
-	// taskDiv.appendChild(taskDate);
 	dashBoard.appendChild(projectDiv);
 
 	return dashBoard;
