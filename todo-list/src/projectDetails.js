@@ -1,4 +1,4 @@
-import render from "./displayTask";
+import render from "./displayProject";
 
 export let projectList = [];
 
