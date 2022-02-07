@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Padauk&display=swap');
+
+/* Dark Mode reference https://www.pullrequest.com/blog/how-to-implement-dark-mode-with-css-js/ */
+
+:root {
+  --background: rgb(227,232,234);
+  --button: rgb(222, 236, 241);
+  --card: rgb(222, 236, 241);
+  --button-hover: rgb(188,202,208);
+  --button-active: rgb(112,122,126);
+  --darkmode: rgb(73,80,84);
+  --text-color: rgb(64, 70, 73);
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box; 
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  text-align: center;
+  font-family: 'Padauk', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  
+}
+
+header {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Button style (light mode) */
+
+button.addButton {
+  padding: 1em;
+  border: 3px solid var(--darkmode);
+  border-radius: 15px;
+  color: var(--text-color)
+}
+
+.darkMode {
+  padding: 1em 3em;
+  margin-left: .5em;
+  border: none;
+  background-color: var(--background);  
+}
+
+
+button.addButton {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text-color)
+}
+
+button.addButton:hover {
+  background-color: var(--button-hover);
+}
+
+button.addButton:active {
+  background-color: var(--button-active);
+  color: var(--background);
+}
+
+button.darkMode:hover {
+  scale: 1.2;
+}
+
+button.darkMode:active {
+  scale: 1;
+}
+
+button:focus {outline: 0;}
+
+.readBtn {
+  font-size: 1.3em;
+  height: 35px;
+  width: 110px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 3px solid var(--text-color);
+}
+
+#removeBtn {
+  font-size: 1.3em;
+  height: 35px;
+  width: 110px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 3px solid var(--darkmode);
+}
+
+button#submitBtn {
+  font-size: 20px;
+  height: 35px;
+  width: 110px;
+  border-radius: 10px;
+  border: 3px solid var(--darkmode);
+}
+
+/* form styles */
+
+#bookDesc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+section span {
+  align-self: end;
+  justify-self: end;
+  scale: .9;
+}
+
+section text {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* input form style */
+
+input#title {
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  border: solid 3px var(--darkmode);
+  border-radius: 5px;
+  margin: .5em;
+}
+
+input#author {
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  border: solid 3px var(--darkmode);
+  border-radius: 5px;
+  margin-bottom: .5em;
+}
+
+input#pages {
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  border: solid 3px var(--darkmode);
+  border-radius: 5px;
+  
+}
+
+input::placeholder {
+  font-size: .8em;
+  text-align: center;
+}
+
+
+input[type=checkbox] {
+  transform: scale(2);
+  margin: 1em;
+}
+
+/* Shelf books style */ 
+
+#shelf {
+  display:  flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid var(--darkmode);
+  border-radius: 15px;
+  height: 350px;
+  width: 250px;
+  padding: 15px;
+  margin: 20px;
+  background-color: var(--card)
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1.3em;
+}
+
+.author {
+  font-size: 1.3em;
+  margin-bottom: 1.3em;
+}
+
+.pages {
+  font-size: 1.3em;
+  margin-bottom: 1.3em;
+}
+
+
+
+/* Modal Reference https://www.w3schools.com/howto/howto_css_modals.asp */
+
+/* prompt container style */
+
+#prompt {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+/* Modal Content/Box */
+#form {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  
+}
+
+/* The Close Button */
+.closeWindow {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeWindow:hover,
+.closeWindow:focus {
+  color: var(--darkmode);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* apply this styles if min-width is 400px, so the normal styles will be mobile view */
+
+@media only screen and (min-width: 660px) {
+
+  #shelf {
+    display: flex;
+    flex-flow: row nowrap;
+    min-width: 0;
+  }
+
+  section text {
+    font-size: 1.5em;
+  }
+
+  input#author, input#title, input#pages {
+    width: 200px;
+  }
+}

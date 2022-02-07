@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
+
+:root {
+  --background: #FFF9F9;
+  --header: #3B3B3B;
+  --hover: #D3CDCD;
+  --active: #B7B3B3;
+  --grid: #575757;
+  --cell-bGround: #D7D6D6;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'KoHo', 'Sans Serif';
+  background-color: var(--background);
+  text-align: center;
+}
+/* Global styles */
+
+h2 {
+  margin: 5em 0 0 0;
+}
+
+.game-result {
+  margin: 1em 0 0 0;
+}
+
+/* Button styles */
+
+button {
+  padding: .3em;
+  border-radius: 10px;
+  border: 1px solid var(--grid);
+  scale: .9
+}
+
+button:hover {
+  background-color: var(--hover);
+}
+
+button:active{
+  background-color: var(--active);
+  scale: 1;
+}
+
+.play-button, .restart-button {
+  margin-right: 1em;
+}
+
+/* Board styles */ 
+
+.grid-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 3em;
+  font-weight: bold; 
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 304px;
+  height: 304px;
+  border: 2px solid black;
+  margin: 2em auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-cell {
+    width: 150px;
+    height: 150px;
+    font-size: 6em;
+  }
+  
+  .game-container {
+    width: 454px;
+    height: 454px;
+  }
+
+  button {
+    scale: 1;
+  }
+  
+  button:active {
+    scale: 1.1;
+  }
+
+  h2 {
+    margin: 3em 0 0 0;
+  }
+}
+

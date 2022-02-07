@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@200&display=swap');
+
+:root {
+  --background: #FFF9F9;
+  --header: #3B3B3B;
+  --hover: #D3CDCD;
+  --active: #B7B3B3;
+  --grid: #575757;
+  --cell-bGround: #D7D6D6;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'KoHo', 'Sans Serif';
+  background-color: var(--background);
+  text-align: center;
+}
+
+.heroTitle {
+  color: var(--header);
+}
+
+.container {
+  padding: 1em;
+}
+
+
+button {
+  padding: .5em;
+  border-radius: 10px;
+  border: 1px solid var(--grid);
+}
+
+
+button:hover {
+  background-color: var(--hover);
+}
+
+button:active{
+  background-color: var(--active);
+  scale: 1.1;
+}
+
+.gridContainer {
+  display: grid;
+  border: 2px solid var(--grid);
+  max-width: 500px;
+  min-height: 500px;
+  margin: 2em auto;
+}
+
+.grid-cell {
+  border: 1px solid var(--grid);
+  background-color: var(--cell-bGround);
+}
